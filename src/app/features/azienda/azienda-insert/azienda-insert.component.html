@@ -1,0 +1,85 @@
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+    <div class="container">
+
+
+        <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="errorMessage">
+            {{errorMessage}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <div class='card'>
+            <div class='card-header'>
+                <h5>Inserisci nuovo elemento</h5>
+            </div>
+            <div class='card-body'>
+
+                <form (ngSubmit)="save(aziendaForm)" #aziendaForm="ngForm" class="row g-3">
+
+
+                    <div class="col-md-6">
+                        <label>Ragione Sociale: <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" placeholder="Inserire la ragione sociale" required minlength="2"
+                            id="nome" name="nome" [(ngModel)]="azienda.ragioneSociale" #ragioneSocialeVar="ngModel"
+                            [ngClass]="{'is-invalid': (ragioneSocialeVar.touched || ragioneSocialeVar.dirty) && !ragioneSocialeVar.valid }">
+                        <span class="invalid-feedback">
+                            <span *ngIf="ragioneSocialeVar.errors?.['required']">
+                                Prego inserire un valore
+                            </span>
+                            <span *ngIf="ragioneSocialeVar.errors?.['minlength']">
+                                Il campo deve avere almeno due caratteri.
+                            </span>
+                        </span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Partita Iva <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" placeholder="Inserire la partita Iva" required minlength="2"
+                            id="titolo" name="titolo" [(ngModel)]="azienda.partitaIva" #partitaIvaVar="ngModel"
+                            [ngClass]="{'is-invalid': (partitaIvaVar.touched || partitaIvaVar.dirty) && !partitaIvaVar.valid }">
+                        <span class="invalid-feedback">
+                            <span *ngIf="partitaIvaVar.errors?.['required']">
+                                Prego inserire un valore
+                            </span>
+                            <span *ngIf="partitaIvaVar.errors?.['minlength']">
+                                Il campo deve avere almeno due caratteri.
+                            </span>
+                        </span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Partita Iva <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" placeholder="Inserire l'indirizzo" required minlength="2"
+                            id="titolo" name="titolo" [(ngModel)]="azienda.indirizzo" #indirizzoVar="ngModel"
+                            [ngClass]="{'is-invalid': (indirizzoVar.touched || indirizzoVar.dirty) && !indirizzoVar.valid }">
+                        <span class="invalid-feedback">
+                            <span *ngIf="indirizzoVar.errors?.['required']">
+                                Prego inserire un valore
+                            </span>
+                            <span *ngIf="indirizzoVar.errors?.['minlength']">
+                                Il campo deve avere almeno due caratteri.
+                            </span>
+                        </span>
+                    </div>
+               
+
+
+
+                    <div class="col-12">
+                        <button type="submit" name="submit" value="submitValue" id="submitId"
+                            class="btn btn-primary">Conferma</button>
+                    </div>
+
+
+                </form>
+                <!-- {{ libro | json }} -->
+
+                <!-- end card-body -->
+            </div>
+            <!-- end card -->
+        </div>
+        <!-- end container -->
+    </div>
+
+    <!-- end main -->
+</main>
