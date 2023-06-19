@@ -8,7 +8,11 @@ import { Observable, catchError, of } from 'rxjs';
 })
 export class AziendaService {
 
+<<<<<<< Updated upstream
   private aziendaUrl='http://localhost:8080/coge/api/azienda';
+=======
+  private aziendaUrl = 'http://localhost:8080/coge/api/azienda';
+>>>>>>> Stashed changes
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -16,12 +20,12 @@ export class AziendaService {
 
   constructor(private http: HttpClient) { }
 
-   /** GET heroes from the server */
-   getAziende(): Observable<Azienda[]> {
+  /** GET heroes from the server */
+  getAziende(): Observable<Azienda[]> {
     return this.http.get<Azienda[]>(this.aziendaUrl).pipe(
-      catchError(this.handleError<Azienda[]>('getAziende',[]))
+      catchError(this.handleError<Azienda[]>('getAziende', []))
     )
-   
+
   }
 
   addAzienda(azienda: Azienda): Observable<Azienda> {
@@ -67,9 +71,9 @@ export class AziendaService {
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead
 
-      
+
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
-}
+  }
 }
