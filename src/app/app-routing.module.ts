@@ -6,12 +6,15 @@ import { AziendaShowComponent } from './features/azienda/azienda-show/azienda-sh
 import { AziendaInsertComponent } from './features/azienda/azienda-insert/azienda-insert.component';
 import { AziendaEditComponent } from './features/azienda/azienda-edit/azienda-edit.component';
 import { RisorsaListComponent } from './features/risorsa/risorsa-list/risorsa-list.component';
+import { AziendaDeleteComponent } from './features/azienda/azienda-delete/azienda-delete.component';
 
 const routes: Routes = [
   { path: 'azienda/list', component: AziendaListComponent },
   { path: 'azienda/insert', component: AziendaInsertComponent },
   { path: 'azienda/edit/:id', component:AziendaEditComponent},
   { path: 'azienda/show/:id', component:AziendaShowComponent},
+  { path: 'azienda/delete/:id', component:AziendaDeleteComponent},
+
   { path: 'risorsa/list', component: RisorsaListComponent },
   { path: 'welcome', component: WelcomeComponent },
   { path: '', redirectTo: '/welcome', pathMatch: 'full' }

@@ -14,6 +14,7 @@ import { AziendaShowComponent } from './features/azienda/azienda-show/azienda-sh
 import { AziendaInsertComponent } from './features/azienda/azienda-insert/azienda-insert.component';
 import { RisorsaListComponent } from './features/risorsa/risorsa-list/risorsa-list.component';
 import { AziendaEditComponent } from './features/azienda/azienda-edit/azienda-edit.component';
+import { AziendaDeleteComponent } from './features/azienda/azienda-delete/azienda-delete.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AziendaEditComponent } from './features/azienda/azienda-edit/azienda-ed
     AziendaInsertComponent,
     RisorsaListComponent,
     AziendaInsertComponent,
-    AziendaEditComponent
+    AziendaEditComponent,
+    AziendaDeleteComponent
   ],
   imports: [
     BrowserModule,
