@@ -13,8 +13,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AziendaShowComponent } from './features/azienda/azienda-show/azienda-show.component';
 import { AziendaInsertComponent } from './features/azienda/azienda-insert/azienda-insert.component';
 import { RisorsaListComponent } from './features/risorsa/risorsa-list/risorsa-list.component';
+<<<<<<< Updated upstream
 import { AziendaEditComponent } from './features/azienda/azienda-edit/azienda-edit.component';
 import { AziendaDeleteComponent } from './features/azienda/azienda-delete/azienda-delete.component';
+=======
+import { RisorsaShowComponent } from './features/risorsa/risorsa-show/risorsa-show.component';
+import { RisorsaInsertComponent } from './features/risorsa/risorsa-insert/risorsa-insert.component';
+import { RisorsaEditComponent } from './features/risorsa/risorsa-edit/risorsa-edit.component';
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -26,9 +32,15 @@ import { AziendaDeleteComponent } from './features/azienda/azienda-delete/aziend
     AziendaShowComponent,
     AziendaInsertComponent,
     RisorsaListComponent,
+<<<<<<< Updated upstream
     AziendaInsertComponent,
     AziendaEditComponent,
     AziendaDeleteComponent
+=======
+    RisorsaShowComponent,
+    RisorsaInsertComponent,
+    RisorsaEditComponent
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,60 @@
+<main class="flex-shrink-0">
+    <div class="container">
+
+        <div class='card'>
+            <div class='card-header'>
+                Visualizza dettaglio
+            </div>
+
+            <div class='card-body'>
+                <dl class="row">
+                    <dt class="col-sm-3 text-right">Nome:</dt>
+                    <dd class="col-sm-9">{{risorsaDetail?.nome}}</dd>
+                </dl>
+
+                <dl class="row">
+                    <dt class="col-sm-3 text-right">Cognome:</dt>
+                    <dd class="col-sm-9">{{risorsaDetail?.cognome}}</dd>
+                </dl>
+                <dl class="row">
+                    <dt class="col-sm-3 text-right">Codice Fiscale:</dt>
+                    <dd class="col-sm-9">{{risorsaDetail?.cf}}</dd>
+                </dl>
+
+                <dl class="row">
+                    <dt class="col-sm-3 text-right">E-mail:</dt>
+                    <dd class="col-sm-9">{{risorsaDetail?.email}}</dd>
+                </dl>
+                <dl class="row">
+                    <dt class="col-sm-3 text-right">Costo giornaliero:</dt>
+                    <dd class="col-sm-9">{{risorsaDetail?.costoGiornaliero}}</dd>
+                </dl>
+                
+
+                <dl class="row">
+                    <dt class="col-sm-3 text-right">Data Inizio:</dt>
+                    <dd class="col-sm-9">{{risorsaDetail?.dataIn| date:'dd/MM/yyyy' }}</dd>
+                </dl>
+                <dl class="row">
+                    <dt class="col-sm-3 text-right">Data Fine:</dt>
+                    <dd class="col-sm-9">{{risorsaDetail?.dataOut| date:'dd/MM/yyyy' }}</dd>
+                </dl>
+
+
+
+
+
+            </div>
+            <div class='card-footer'>
+                <button class='btn btn-outline-secondary' style='width: 80px' (click)="onBack()"> <i
+                        class='fa fa-chevron-left'></i> Back
+                </button>
+            </div>
+            <!-- end card body -->
+        </div>
+
+
+        <!-- end card -->
+    </div>
+
+</main>

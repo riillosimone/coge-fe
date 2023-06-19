@@ -5,8 +5,8 @@ export class Risorsa {
         public nome?:string,
         public cognome?:string,
         public cf?:string,
-        public data_in?:Date,
-        public data_out?:Date,
+        public dataIn?:Date,
+        public dataOut?:Date,
         public email?:string,
         public costoGiornaliero?:number
     ){}

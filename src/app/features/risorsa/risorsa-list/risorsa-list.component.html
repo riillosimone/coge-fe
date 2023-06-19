@@ -35,8 +35,8 @@
 
                                 <td>{{risorsaItem.cognome}}</td>
                                 <td>{{risorsaItem.cf }}</td>
-                                <td>{{risorsaItem.data_in | date:'dd/MM/yyyy'}}</td>
-                                <td>{{risorsaItem.data_out | date:'dd/MM/yyyy'}}</td>
+                                <td>{{risorsaItem.dataIn | date:'dd/MM/yyyy'}}</td>
+                                <td>{{risorsaItem.dataOut | date:'dd/MM/yyyy'}}</td>
                                 <td>{{risorsaItem.email}}</td>
                                 <td>{{risorsaItem.costoGiornaliero}}</td>
 
@@ -44,11 +44,11 @@
                                 <td>
 
 
-                                    <a class="btn  btn-sm btn-outline-primary ml-2 mr-2"
-                                        [routerLink]="['/risorsa', risorsaItem.id]">Visualizza dettaglio</a>
-                                    <a class="btn  btn-sm btn-outline-primary ml-2 mr-2"
+                                    <a class="btn  btn-sm btn-outline-primary ml-auto mr-auto" style='margin-right: 5px;'
+                                        [routerLink]="['/risorsa/show', risorsaItem.id]">Visualizza dettaglio</a>
+                                    <a class="btn  btn-sm btn-outline-primary ml-auto mr-auto" style='margin-right: 5px;'
                                         [routerLink]="['/risorsa/edit', risorsaItem.id]">Edit</a>
-                                    <a class="btn btn-outline-danger btn-sm"
+                                    <a class="btn btn-outline-danger btn-sm ml-auto mr-auto"
                                         [routerLink]="['/risorsa/delete', risorsaItem.id]">Delete</a>
 
 
