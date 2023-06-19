@@ -8,7 +8,7 @@ import { Observable, catchError, of } from 'rxjs';
 })
 export class AziendaService {
 
-  private aziendaUrl=   'http://localhost:8080/coge/api/azienda';
+  private aziendaUrl='http://localhost:8080/coge/api/azienda';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -23,6 +23,40 @@ export class AziendaService {
     )
    
   }
+
+  addAzienda(azienda: Azienda): Observable<Azienda> {
+    return this.http.post<Azienda>(this.aziendaUrl, azienda, this.httpOptions);
+  }
+
+  /** GET hero by id. Will 404 if id not found */
+  getAzienda(id: number): Observable<Azienda> {
+    const url = `${this.aziendaUrl}/${id}`;
+    return this.http.get<Azienda>(url).pipe(
+      catchError(this.handleError<Azienda>(`getAzienda id=${id}`))
+    );
+  }
+
+
+
+   /** DELETE: delete the hero from the server */
+   deleteAzienda(id: number): Observable<any> {
+    const url = `${this.aziendaUrl}/${id}`;
+
+    return this.http.delete<Azienda>(url, this.httpOptions).pipe(
+     
+      catchError(this.handleError<Azienda>('deleteAzienda'))
+    );
+  }
+
+
+   /** PUT: update the hero on the server */
+   updateAzienda(azienda: Azienda): Observable<any> {
+    return this.http.put(this.aziendaUrl, azienda, this.httpOptions).pipe(
+     
+      catchError(this.handleError<any>('updateAzienda'))
+    );
+  }
+
 
 
 

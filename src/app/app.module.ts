@@ -8,6 +8,7 @@ import { FooterComponent } from './core/footer/footer.component';
 import { WelcomeComponent } from './features/welcome/welcome.component';
 import { AziendaListComponent } from './features/azienda/azienda-list/azienda-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AziendaShowComponent } from './features/azienda/azienda-show/azienda-show.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     FooterComponent,
     WelcomeComponent,
-    AziendaListComponent
+    AziendaListComponent,
+    AziendaShowComponent
   ],
   imports: [
     BrowserModule,
