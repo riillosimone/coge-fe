@@ -1,0 +1,66 @@
+
+	 
+	
+	 
+	
+		<!-- Begin page content -->
+		<main class="flex-shrink-0">
+		  <div class="container">
+		  
+		  		
+		  
+		  
+		  
+		  		<div class='card'>
+				    <div class='card-header'>
+				        <h5>Lista dei risultati</h5> 
+				    </div>
+				    <div class='card-body'>
+				    	<a class="btn btn-primary " [routerLink]="['/azienda/insert']" >Add New</a>
+				    
+				        <div class='table-responsive'>
+				            <table class='table table-hover ' >
+				                <thead>
+				                    <tr>
+			                         	<th>Ragione Sociale</th>
+				                        <th>Partita Iva</th>
+				                        <th>Indirizzo</th>
+                                        <th>Azioni</th>
+
+
+				                    </tr>
+				                </thead>
+				                <tbody *ngFor="let aziendaItem of aziende">
+										<tr>
+											<td>{{aziendaItem.ragioneSociale }}</td>
+						
+                                            <td>{{aziendaItem.partitaIva}}</td>  
+                                            <td>{{aziendaItem.indirizzo }}</td>
+
+
+											<td>
+
+
+												<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" [routerLink]="['/azienda', aziendaItem.id]" >Visualizza dettaglio</a>
+												<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" [routerLink]="['/azienda/edit', aziendaItem.id]">Edit</a>
+												<a class="btn btn-outline-danger btn-sm" [routerLink]="['/azienda/delete', aziendaItem.id]">Delete</a>
+
+
+											</td>
+
+										</tr>
+									
+				                </tbody>
+				            </table>
+				        </div>
+				   
+					<!-- end card-body -->			   
+			    </div>
+			<!-- end card -->
+			</div>	
+		 
+		   
+		 <!-- end container -->  
+		  </div>
+		  
+		</main>
