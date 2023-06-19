@@ -29,6 +29,11 @@ export class AziendaInsertComponent {
       this.errorMessage = 'Attenzione! Operazione fallita! Il form non è stato validato';
   }
 
+  onBack():void {
+    this.router.navigate(['/azienda/list']);
+  }
+
+
 
 
 }

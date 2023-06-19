@@ -8,11 +8,7 @@ import { Observable, catchError, of } from 'rxjs';
 })
 export class AziendaService {
 
-<<<<<<< Updated upstream
   private aziendaUrl='http://localhost:8080/coge/api/azienda';
-=======
-  private aziendaUrl = 'http://localhost:8080/coge/api/azienda';
->>>>>>> Stashed changes
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })

@@ -12,15 +12,15 @@
             <div class='card-header'>
                 <h5>Inserisci nuovo elemento</h5>
             </div>
-            <div class='card-body'>
+            <div class='card-body' *ngIf="aziendaEdit">
 
-                <form (ngSubmit)="save(aziendaForm)" #aziendaForm="ngForm" class="row g-3">
+                <form (ngSubmit)="update(atletaForm)" #atletaForm="ngForm" class="row g-3">
 
 
                     <div class="col-md-6">
                         <label>Ragione Sociale: <span class="text-danger">*</span></label>
                         <input type="text" class="form-control" placeholder="Inserire la ragione sociale" required minlength="2"
-                            id="nome" name="nome" [(ngModel)]="azienda.ragioneSociale" #ragioneSocialeVar="ngModel"
+                            id="ragioneSociale" name="ragioneSociale" [(ngModel)]="aziendaEdit.ragioneSociale" #ragioneSocialeVar="ngModel"
                             [ngClass]="{'is-invalid': (ragioneSocialeVar.touched || ragioneSocialeVar.dirty) && !ragioneSocialeVar.valid }">
                         <span class="invalid-feedback">
                             <span *ngIf="ragioneSocialeVar.errors?.['required']">
@@ -33,9 +33,9 @@
                     </div>
 
                     <div class="col-md-6">
-                        <label>Partita Iva <span class="text-danger">*</span></label>
+                        <label>Partita Iva: <span class="text-danger">*</span></label>
                         <input type="text" class="form-control" placeholder="Inserire la partita Iva" required minlength="2"
-                            id="titolo" name="titolo" [(ngModel)]="azienda.partitaIva" #partitaIvaVar="ngModel"
+                            id="partitaIva" name="partitaIva" [(ngModel)]="aziendaEdit.partitaIva" #partitaIvaVar="ngModel"
                             [ngClass]="{'is-invalid': (partitaIvaVar.touched || partitaIvaVar.dirty) && !partitaIvaVar.valid }">
                         <span class="invalid-feedback">
                             <span *ngIf="partitaIvaVar.errors?.['required']">
@@ -48,9 +48,9 @@
                     </div>
 
                     <div class="col-md-6">
-                        <label>Partita Iva <span class="text-danger">*</span></label>
+                        <label>Idirizzo: <span class="text-danger">*</span></label>
                         <input type="text" class="form-control" placeholder="Inserire l'indirizzo" required minlength="2"
-                            id="titolo" name="titolo" [(ngModel)]="azienda.indirizzo" #indirizzoVar="ngModel"
+                            id="indirizzo" name="indirizzo" [(ngModel)]="aziendaEdit.indirizzo" #indirizzoVar="ngModel"
                             [ngClass]="{'is-invalid': (indirizzoVar.touched || indirizzoVar.dirty) && !indirizzoVar.valid }">
                         <span class="invalid-feedback">
                             <span *ngIf="indirizzoVar.errors?.['required']">
@@ -61,13 +61,15 @@
                             </span>
                         </span>
                     </div>
-               
 
+
+             
 
 
                     <div class="col-12">
-                        <button type="submit" name="submit" value="submitValue" id="submitId"
-                            class="btn btn-primary">Conferma</button>
+                        
+                        <button type="submit" name="submitSave" value="submit" id="submitSave" class="btn btn-primary"
+                            [disabled]="!atletaForm.form.valid">Conferma</button>
                     </div>
 
                     <div class='card-footer'>

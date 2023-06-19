@@ -10,12 +10,10 @@ import { FooterComponent } from './core/footer/footer.component';
 import { WelcomeComponent } from './features/welcome/welcome.component';
 import { AziendaListComponent } from './features/azienda/azienda-list/azienda-list.component';
 import { HttpClientModule } from '@angular/common/http';
-<<<<<<< Updated upstream
 import { AziendaShowComponent } from './features/azienda/azienda-show/azienda-show.component';
 import { AziendaInsertComponent } from './features/azienda/azienda-insert/azienda-insert.component';
-=======
 import { RisorsaListComponent } from './features/risorsa/risorsa-list/risorsa-list.component';
->>>>>>> Stashed changes
+import { AziendaEditComponent } from './features/azienda/azienda-edit/azienda-edit.component';
 
 @NgModule({
   declarations: [
@@ -24,12 +22,11 @@ import { RisorsaListComponent } from './features/risorsa/risorsa-list/risorsa-li
     FooterComponent,
     WelcomeComponent,
     AziendaListComponent,
-<<<<<<< Updated upstream
     AziendaShowComponent,
-    AziendaInsertComponent
-=======
-    RisorsaListComponent
->>>>>>> Stashed changes
+    AziendaInsertComponent,
+    RisorsaListComponent,
+    AziendaInsertComponent,
+    AziendaEditComponent
   ],
   imports: [
     BrowserModule,
