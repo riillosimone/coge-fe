@@ -8,6 +8,9 @@ import { AziendaInsertComponent } from './features/azienda/azienda-insert/aziend
 import { AziendaEditComponent } from './features/azienda/azienda-edit/azienda-edit.component';
 import { RisorsaListComponent } from './features/risorsa/risorsa-list/risorsa-list.component';
 import { AziendaDeleteComponent } from './features/azienda/azienda-delete/azienda-delete.component';
+import { CommessaListComponent } from './features/commessa/commessa-list/commessa-list.component';
+import { CommessaShowComponent } from './features/commessa/commessa-show/commessa-show.component';
+import { CommessaInsertComponent } from './features/commessa/commessa-insert/commessa-insert.component';
 
 const routes: Routes = [
   { path: 'azienda/list', component: AziendaListComponent },
@@ -15,12 +18,18 @@ const routes: Routes = [
   { path: 'azienda/edit/:id', component:AziendaEditComponent},
   { path: 'azienda/show/:id', component:AziendaShowComponent},
   { path: 'azienda/delete/:id', component:AziendaDeleteComponent},
+<<<<<<< Updated upstream
 =======
 import { RisorsaListComponent } from './features/risorsa/risorsa-list/risorsa-list.component';
 import { RisorsaShowComponent } from './features/risorsa/risorsa-show/risorsa-show.component';
 import { RisorsaInsertComponent } from './features/risorsa/risorsa-insert/risorsa-insert.component';
 >>>>>>> Stashed changes
 
+=======
+  { path: 'commessa/list', component: CommessaListComponent },
+  { path: 'commessa/show/:id', component:CommessaShowComponent},
+  { path: 'commessa/insert', component: CommessaInsertComponent},
+>>>>>>> Stashed changes
   { path: 'risorsa/list', component: RisorsaListComponent },
 <<<<<<< Updated upstream
 =======

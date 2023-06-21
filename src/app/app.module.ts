@@ -16,10 +16,16 @@ import { RisorsaListComponent } from './features/risorsa/risorsa-list/risorsa-li
 <<<<<<< Updated upstream
 import { AziendaEditComponent } from './features/azienda/azienda-edit/azienda-edit.component';
 import { AziendaDeleteComponent } from './features/azienda/azienda-delete/azienda-delete.component';
+<<<<<<< Updated upstream
 =======
 import { RisorsaShowComponent } from './features/risorsa/risorsa-show/risorsa-show.component';
 import { RisorsaInsertComponent } from './features/risorsa/risorsa-insert/risorsa-insert.component';
 import { RisorsaEditComponent } from './features/risorsa/risorsa-edit/risorsa-edit.component';
+>>>>>>> Stashed changes
+=======
+import { CommessaListComponent } from './features/commessa/commessa-list/commessa-list.component';
+import { CommessaShowComponent } from './features/commessa/commessa-show/commessa-show.component';
+import { CommessaInsertComponent } from './features/commessa/commessa-insert/commessa-insert.component';
 >>>>>>> Stashed changes
 
 @NgModule({
@@ -35,11 +41,18 @@ import { RisorsaEditComponent } from './features/risorsa/risorsa-edit/risorsa-ed
 <<<<<<< Updated upstream
     AziendaInsertComponent,
     AziendaEditComponent,
+<<<<<<< Updated upstream
     AziendaDeleteComponent
 =======
     RisorsaShowComponent,
     RisorsaInsertComponent,
     RisorsaEditComponent
+>>>>>>> Stashed changes
+=======
+    AziendaDeleteComponent,
+    CommessaListComponent,
+    CommessaShowComponent,
+    CommessaInsertComponent
 >>>>>>> Stashed changes
   ],
   imports: [

@@ -1,0 +1,55 @@
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+    <div class="container">
+
+        <div class="alert alert-success alert-dismissible fade show " role="alert" *ngIf="confirmMessage">
+            {{confirmMessage}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" ></button>
+          </div>
+
+        <div class='card'>
+            <div class='card-header'>
+                <h5>Lista dei risultati</h5>
+            </div>
+            <div class='card-body'>
+                <a class="btn btn-primary " routerLink="/commessa/insert">Add New</a>
+
+                <div class='table-responsive'>
+                    <table class='table table-hover'>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Descrizione</th>
+                                <th>Codice</th>
+                                <th>DataIn</th>
+                                <th>DataOut</th>
+                                <th>Importo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let commessaItem of listaCommesse" >
+                                <td>{{commessaItem.id}}</td>
+                                <td>{{commessaItem.descrizione}}</td>
+                                <td>{{commessaItem.codice}}</td>
+                                <td>{{commessaItem.dataIn | date:'dd/MM/yyyy'}}</td>
+                                <td>{{commessaItem.dataOut | date:'dd/MM/yyyy'}}</td>
+                                <td>{{commessaItem.importo}}</td>
+                                <a class="btn  btn-sm btn-outline-primary ml-2 mr-2" [routerLink]="['/commessa/show', commessaItem.id]" >Visualizza dettaglio</a>
+                                <a class="btn btn-sm btn-outline-primary ml-2 mr-2" [routerLink]="['/commessa/edit', commessaItem.id]">Edit</a>
+                                <a class="btn btn-outline-danger btn-sm" [routerLink]="['/commessa/delete', commessaItem.id]">Delete</a>
+
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- end card-body -->
+            </div>
+            <!-- end card -->
+        </div>
+
+        <!-- end container -->
+    </div>
+
+</main>
