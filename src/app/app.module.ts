@@ -13,20 +13,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AziendaShowComponent } from './features/azienda/azienda-show/azienda-show.component';
 import { AziendaInsertComponent } from './features/azienda/azienda-insert/azienda-insert.component';
 import { RisorsaListComponent } from './features/risorsa/risorsa-list/risorsa-list.component';
-<<<<<<< Updated upstream
 import { AziendaEditComponent } from './features/azienda/azienda-edit/azienda-edit.component';
 import { AziendaDeleteComponent } from './features/azienda/azienda-delete/azienda-delete.component';
-<<<<<<< Updated upstream
-=======
 import { RisorsaShowComponent } from './features/risorsa/risorsa-show/risorsa-show.component';
 import { RisorsaInsertComponent } from './features/risorsa/risorsa-insert/risorsa-insert.component';
 import { RisorsaEditComponent } from './features/risorsa/risorsa-edit/risorsa-edit.component';
->>>>>>> Stashed changes
-=======
 import { CommessaListComponent } from './features/commessa/commessa-list/commessa-list.component';
 import { CommessaShowComponent } from './features/commessa/commessa-show/commessa-show.component';
 import { CommessaInsertComponent } from './features/commessa/commessa-insert/commessa-insert.component';
->>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -38,22 +32,16 @@ import { CommessaInsertComponent } from './features/commessa/commessa-insert/com
     AziendaShowComponent,
     AziendaInsertComponent,
     RisorsaListComponent,
-<<<<<<< Updated upstream
     AziendaInsertComponent,
     AziendaEditComponent,
-<<<<<<< Updated upstream
-    AziendaDeleteComponent
-=======
+    AziendaDeleteComponent,
     RisorsaShowComponent,
     RisorsaInsertComponent,
-    RisorsaEditComponent
->>>>>>> Stashed changes
-=======
+    RisorsaEditComponent,
     AziendaDeleteComponent,
     CommessaListComponent,
     CommessaShowComponent,
     CommessaInsertComponent
->>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
