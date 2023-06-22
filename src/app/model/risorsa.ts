@@ -1,3 +1,5 @@
+import { Attachment } from "./attachment";
+
 export class Risorsa {
 
     constructor(
@@ -8,7 +10,8 @@ export class Risorsa {
         public dataIn?:Date,
         public dataOut?:Date,
         public email?:string,
-        public costoGiornaliero?:number
+        public costoGiornaliero?:number,
+        public cv?:Attachment
     ){}
 
 }

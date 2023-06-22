@@ -7,12 +7,19 @@ import { AziendaInsertComponent } from './features/azienda/azienda-insert/aziend
 import { AziendaEditComponent } from './features/azienda/azienda-edit/azienda-edit.component';
 import { RisorsaListComponent } from './features/risorsa/risorsa-list/risorsa-list.component';
 import { AziendaDeleteComponent } from './features/azienda/azienda-delete/azienda-delete.component';
+<<<<<<< Updated upstream
 import { CommessaListComponent } from './features/commessa/commessa-list/commessa-list.component';
 import { CommessaShowComponent } from './features/commessa/commessa-show/commessa-show.component';
 import { CommessaInsertComponent } from './features/commessa/commessa-insert/commessa-insert.component';
 import { RisorsaShowComponent } from './features/risorsa/risorsa-show/risorsa-show.component';
 import { RisorsaEditComponent } from './features/risorsa/risorsa-edit/risorsa-edit.component';
 import { RisorsaInsertComponent } from './features/risorsa/risorsa-insert/risorsa-insert.component';
+=======
+import { RisorsaShowComponent } from './features/risorsa/risorsa-show/risorsa-show.component';
+import { RisorsaInsertComponent } from './features/risorsa/risorsa-insert/risorsa-insert.component';
+import { RisorsaEditComponent } from './features/risorsa/risorsa-edit/risorsa-edit.component';
+import { RisorsaDeleteComponent } from './features/risorsa/risorsa-delete/risorsa-delete.component';
+>>>>>>> Stashed changes
 
 const routes: Routes = [
   { path: 'azienda/list', component: AziendaListComponent },
@@ -20,6 +27,7 @@ const routes: Routes = [
   { path: 'azienda/edit/:id', component:AziendaEditComponent},
   { path: 'azienda/show/:id', component:AziendaShowComponent},
   { path: 'azienda/delete/:id', component:AziendaDeleteComponent},
+<<<<<<< Updated upstream
   { path: 'commessa/list', component: CommessaListComponent },
   { path: 'commessa/show/:id', component:CommessaShowComponent},
   { path: 'commessa/insert', component: CommessaInsertComponent},
@@ -27,6 +35,13 @@ const routes: Routes = [
   { path: 'risorsa/edit/:id', component: RisorsaEditComponent },
   { path: 'risorsa/insert', component: RisorsaInsertComponent },
   { path: 'risorsa/list', component: RisorsaListComponent },
+=======
+  { path: 'risorsa/list', component: RisorsaListComponent },
+  { path: 'risorsa/insert', component: RisorsaInsertComponent },
+  { path: 'risorsa/edit/:id', component: RisorsaEditComponent },
+  { path: 'risorsa/show/:id', component: RisorsaShowComponent },
+  { path: 'risorsa/delete/:id', component:RisorsaDeleteComponent},
+>>>>>>> Stashed changes
   { path: 'welcome', component: WelcomeComponent },
   { path: '', redirectTo: '/welcome', pathMatch: 'full' }
 ];

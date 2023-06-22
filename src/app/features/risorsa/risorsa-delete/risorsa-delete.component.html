@@ -9,39 +9,35 @@
             <div class='card-body'>
                 <dl class="row">
                     <dt class="col-sm-3 text-right">Nome:</dt>
-                    <dd class="col-sm-9">{{risorsaDetail?.nome}}</dd>
+                    <dd class="col-sm-9">{{risorsaDelete?.nome}}</dd>
                 </dl>
 
                 <dl class="row">
                     <dt class="col-sm-3 text-right">Cognome:</dt>
-                    <dd class="col-sm-9">{{risorsaDetail?.cognome}}</dd>
+                    <dd class="col-sm-9">{{risorsaDelete?.cognome}}</dd>
                 </dl>
                 <dl class="row">
                     <dt class="col-sm-3 text-right">Codice Fiscale:</dt>
-                    <dd class="col-sm-9">{{risorsaDetail?.cf}}</dd>
+                    <dd class="col-sm-9">{{risorsaDelete?.cf}}</dd>
                 </dl>
 
                 <dl class="row">
                     <dt class="col-sm-3 text-right">E-mail:</dt>
-                    <dd class="col-sm-9">{{risorsaDetail?.email}}</dd>
+                    <dd class="col-sm-9">{{risorsaDelete?.email}}</dd>
                 </dl>
                 <dl class="row">
                     <dt class="col-sm-3 text-right">Costo giornaliero:</dt>
-                    <dd class="col-sm-9">{{risorsaDetail?.costoGiornaliero}}</dd>
+                    <dd class="col-sm-9">{{risorsaDelete?.costoGiornaliero}}</dd>
                 </dl>
                 
 
                 <dl class="row">
                     <dt class="col-sm-3 text-right">Data Inizio:</dt>
-                    <dd class="col-sm-9">{{risorsaDetail?.dataIn| date:'dd/MM/yyyy' }}</dd>
+                    <dd class="col-sm-9">{{risorsaDelete?.dataIn| date:'dd/MM/yyyy' }}</dd>
                 </dl>
                 <dl class="row">
                     <dt class="col-sm-3 text-right">Data Fine:</dt>
-                    <dd class="col-sm-9">{{risorsaDetail?.dataOut| date:'dd/MM/yyyy' }}</dd>
-                </dl>
-                <dl class="row">
-                    <dt class="col-sm-3 text-right">Curriculum Vitae:</dt>
-                    <dd class="col-sm-9">{{risorsaDetail?.cv}}</dd>
+                    <dd class="col-sm-9">{{risorsaDelete?.dataOut| date:'dd/MM/yyyy' }}</dd>
                 </dl>
 
 
@@ -50,9 +46,11 @@
 
             </div>
             <div class='card-footer'>
-                <button class='btn btn-outline-secondary' style='width: 80px' (click)="onBack()"> <i
+                <button class='btn btn-outline-secondary' style='width: 80px; margin-right: 5px;' (click)="onBack()"> <i
                         class='fa fa-chevron-left'></i> Back
                 </button>
+                <button type="submit" name="submit" id="submit"
+                        class="btn btn-danger" (click)="onConfermaDelete()">Conferma</button>
             </div>
             <!-- end card body -->
         </div>
