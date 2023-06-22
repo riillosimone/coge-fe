@@ -49,7 +49,7 @@ export class RisorsaService {
    /** PUT: update the hero on the server */
    updateRisorsa(risorsa: Risorsa): Observable<any> {
     const url = `${this.risorsaUrl}/edit`;
-    return this.http.put(this.risorsaUrl, risorsa, this.httpOptions).pipe(
+    return this.http.put(url, risorsa, this.httpOptions).pipe(
      
       catchError(this.handleError<any>('updateRisorsa'))
     );

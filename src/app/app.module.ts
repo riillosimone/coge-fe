@@ -15,12 +15,14 @@ import { AziendaInsertComponent } from './features/azienda/azienda-insert/aziend
 import { RisorsaListComponent } from './features/risorsa/risorsa-list/risorsa-list.component';
 import { AziendaEditComponent } from './features/azienda/azienda-edit/azienda-edit.component';
 import { AziendaDeleteComponent } from './features/azienda/azienda-delete/azienda-delete.component';
+<<<<<<< Updated upstream
 import { RisorsaShowComponent } from './features/risorsa/risorsa-show/risorsa-show.component';
 import { RisorsaInsertComponent } from './features/risorsa/risorsa-insert/risorsa-insert.component';
 import { RisorsaEditComponent } from './features/risorsa/risorsa-edit/risorsa-edit.component';
 import { CommessaListComponent } from './features/commessa/commessa-list/commessa-list.component';
 import { CommessaShowComponent } from './features/commessa/commessa-show/commessa-show.component';
 import { CommessaInsertComponent } from './features/commessa/commessa-insert/commessa-insert.component';
+<<<<<<< HEAD
 import { CommessaDeleteComponent } from './features/commessa/commessa-delete/commessa-delete.component';
 import { CommessaEditComponent } from './features/commessa/commessa-edit/commessa-edit.component';
 import { RapportinoListComponent } from './features/rapportino/rapportino-list/rapportino-list.component';
@@ -28,6 +30,14 @@ import { RapportinoShowComponent } from './features/rapportino/rapportino-show/r
 import { RapportinoInsertComponent } from './features/rapportino/rapportino-insert/rapportino-insert.component';
 import { RapportinoEditComponent } from './features/rapportino/rapportino-edit/rapportino-edit.component';
 import { RapportinoDeleteComponent } from './features/rapportino/rapportino-delete/rapportino-delete.component';
+=======
+=======
+import { RisorsaEditComponent } from './features/risorsa/risorsa-edit/risorsa-edit.component';
+import { RisorsaInsertComponent } from './features/risorsa/risorsa-insert/risorsa-insert.component';
+import { RisorsaShowComponent } from './features/risorsa/risorsa-show/risorsa-show.component';
+import { RisorsaDeleteComponent } from './features/risorsa/risorsa-delete/risorsa-delete.component';
+>>>>>>> Stashed changes
+>>>>>>> a6f54ae55207e42c6d4c770a772b4b92eaec9239
 
 @NgModule({
   declarations: [
@@ -39,6 +49,7 @@ import { RapportinoDeleteComponent } from './features/rapportino/rapportino-dele
     AziendaShowComponent,
     AziendaInsertComponent,
     RisorsaListComponent,
+<<<<<<< Updated upstream
     AziendaInsertComponent,
     AziendaEditComponent,
     AziendaDeleteComponent,
@@ -48,6 +59,7 @@ import { RapportinoDeleteComponent } from './features/rapportino/rapportino-dele
     AziendaDeleteComponent,
     CommessaListComponent,
     CommessaShowComponent,
+<<<<<<< HEAD
     CommessaInsertComponent,
     CommessaDeleteComponent,
     CommessaEditComponent,
@@ -57,6 +69,18 @@ import { RapportinoDeleteComponent } from './features/rapportino/rapportino-dele
     RapportinoEditComponent,
     RapportinoDeleteComponent
     
+=======
+    CommessaInsertComponent
+=======
+    RisorsaEditComponent,
+    RisorsaInsertComponent,
+    RisorsaShowComponent,
+    AziendaInsertComponent,
+    AziendaEditComponent,
+    AziendaDeleteComponent,
+    RisorsaDeleteComponent
+>>>>>>> Stashed changes
+>>>>>>> a6f54ae55207e42c6d4c770a772b4b92eaec9239
   ],
   imports: [
     BrowserModule,

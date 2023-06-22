@@ -50,14 +50,14 @@
                     <div class="col-md-6">
                         <label>E-mail</label>
                         <input type="email" class="form-control" placeholder="Inserire l'e-mail" minlength="2"
-                            id="titolo" name="titolo" [(ngModel)]="risorsa.email" #emailVar="ngModel">
+                            id="email" name="email" [(ngModel)]="risorsa.email" #emailVar="ngModel">
 
                     </div>
 
                     <div class="col-md-6">
                         <label>Codice Fiscale<span class="text-danger">*</span></label>
                         <input type="text" class="form-control" placeholder="Inserire il codice fiscale" required
-                            minlength="2" id="titolo" name="titolo" [(ngModel)]="risorsa.cf" #cfVar="ngModel"
+                            minlength="2" id="cf" name="cf" [(ngModel)]="risorsa.cf" #cfVar="ngModel"
                             [ngClass]="{'is-invalid': (cfVar.touched || cfVar.dirty) && !cfVar.valid }">
                         <span class="invalid-feedback">
                             <span *ngIf="cfVar.errors?.['required']">
@@ -85,8 +85,13 @@
                     <div class="col-md-6">
                         <label>Costo giornaliero (€)</label>
                         <input type="number" class="form-control" placeholder="Inserire il costo giornaliero"
-                            minlength="2" id="titolo" name="titolo" [(ngModel)]="risorsa.costoGiornaliero"
+                            minlength="2" id="costoGiornaliero" name="costoGiornaliero" [(ngModel)]="risorsa.costoGiornaliero"
                             #costoGiornalieroVar="ngModel">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Curriculum Vitae</label>
+                        <input type="file" class="form-control" placeholder="Inserire il cv" id="cv" name="cv" [(ngModel)]="risorsa.cv"
+                            #cvVar="ngModel">
                     </div>
 
 
