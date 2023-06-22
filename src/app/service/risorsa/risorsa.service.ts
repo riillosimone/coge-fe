@@ -23,6 +23,7 @@ export class RisorsaService {
     )
   }
 
+<<<<<<< Updated upstream
   /** GET hero by id. Will 404 if id not found */
   getRisorsa(id: number): Observable<Risorsa> {
     const url = `${this.risorsaUrl}/${id}`;
@@ -54,6 +55,17 @@ export class RisorsaService {
       catchError(this.handleError<any>('updateRisorsa'))
     );
   }
+=======
+  risorseConNumeroCommesse():Observable<Risorsa[]>{
+    const url = `${this.risorsaUrl}/$riepilogorisorse`;
+    return this.http.get<Risorsa[]>(this.risorsaUrl).pipe(
+      catchError(this.handleError<Risorsa[]>('getRisorse', []))
+    )
+
+
+  }
+
+>>>>>>> Stashed changes
 
 
 

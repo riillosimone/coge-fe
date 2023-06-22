@@ -48,7 +48,7 @@
                     </div>
 
                     <div class="col-md-6">
-                        <label>Partita Iva <span class="text-danger">*</span></label>
+                        <label>Indirizzo: <span class="text-danger">*</span></label>
                         <input type="text" class="form-control" placeholder="Inserire l'indirizzo" required minlength="2"
                             id="titolo" name="titolo" [(ngModel)]="azienda.indirizzo" #indirizzoVar="ngModel"
                             [ngClass]="{'is-invalid': (indirizzoVar.touched || indirizzoVar.dirty) && !indirizzoVar.valid }">

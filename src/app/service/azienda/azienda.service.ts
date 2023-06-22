@@ -58,6 +58,18 @@ export class AziendaService {
   }
 
 
+  getAziendeCostoDesc(): Observable<Azienda[]>{
+    const url = `${this.aziendaUrl}/$aziendacostodesc`;
+    return this.http.get<Azienda[]>(this.aziendaUrl).pipe(
+      catchError(this.handleError<Azienda[]>('getAziende', []))
+    )
+
+
+
+
+  }
+
+
 
 
 

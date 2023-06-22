@@ -16,6 +16,7 @@ import { RisorsaListComponent } from './features/risorsa/risorsa-list/risorsa-li
 import { AziendaEditComponent } from './features/azienda/azienda-edit/azienda-edit.component';
 import { AziendaDeleteComponent } from './features/azienda/azienda-delete/azienda-delete.component';
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import { RisorsaShowComponent } from './features/risorsa/risorsa-show/risorsa-show.component';
 import { RisorsaInsertComponent } from './features/risorsa/risorsa-insert/risorsa-insert.component';
 import { RisorsaEditComponent } from './features/risorsa/risorsa-edit/risorsa-edit.component';
@@ -38,6 +39,10 @@ import { RisorsaShowComponent } from './features/risorsa/risorsa-show/risorsa-sh
 import { RisorsaDeleteComponent } from './features/risorsa/risorsa-delete/risorsa-delete.component';
 >>>>>>> Stashed changes
 >>>>>>> a6f54ae55207e42c6d4c770a772b4b92eaec9239
+=======
+import { AziendaCostoDescComponent } from './features/azienda/azienda-costo-desc/azienda-costo-desc.component';
+import { RisorsaConComesseComponent } from './features/risorsa/risorsa-con-comesse/risorsa-con-comesse.component';
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -53,6 +58,7 @@ import { RisorsaDeleteComponent } from './features/risorsa/risorsa-delete/risors
     AziendaInsertComponent,
     AziendaEditComponent,
     AziendaDeleteComponent,
+<<<<<<< Updated upstream
     RisorsaShowComponent,
     RisorsaInsertComponent,
     RisorsaEditComponent,
@@ -81,6 +87,10 @@ import { RisorsaDeleteComponent } from './features/risorsa/risorsa-delete/risors
     RisorsaDeleteComponent
 >>>>>>> Stashed changes
 >>>>>>> a6f54ae55207e42c6d4c770a772b4b92eaec9239
+=======
+    AziendaCostoDescComponent,
+    RisorsaConComesseComponent
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
