@@ -1,6 +1,6 @@
 export class Rapportino {
     constructor(
         public id?:number,
-       public importo?:number
+       public numeroGiorni?:number
     ){}
 }

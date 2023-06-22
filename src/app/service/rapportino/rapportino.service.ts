@@ -1,14 +1,14 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, of } from 'rxjs';
-import { Commessa } from 'src/app/model/commessa';
+import { Rapportino } from 'src/app/model/rapportino';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CommessaService {
+export class RapportinoService {
 
-  private commessaUrl = 'http://localhost:8080/coge/api/commessa';
+  private rapportinoUrl = 'http://localhost:8080/coge/api/rapportino';
 
   httpOptions = {
     headers: new HttpHeaders({'Content-Type' : 'application/json'})
@@ -16,50 +16,50 @@ export class CommessaService {
 
   constructor(private http: HttpClient) { }
 
-  listAll(): Observable<Commessa[]> {
-    return this.http.get<Commessa[]>(this.commessaUrl)
+  listAll(): Observable<Rapportino[]> {
+    return this.http.get<Rapportino[]>(this.rapportinoUrl)
       .pipe(
         //tap(_ => this.log('fetched commesse')),
-        catchError(this.handleError<Commessa[]>('getCommesse', []))
+        catchError(this.handleError<Rapportino[]>('getRapportini', []))
       );
   }
 
 
    /** POST: add a new hero to the server */
-   insert(commessa: Commessa): Observable<Commessa> {
-    return this.http.post<Commessa>(this.commessaUrl, commessa, this.httpOptions).pipe(
+   insertRapportino(rapportino: Rapportino): Observable<Rapportino> {
+    return this.http.post<Rapportino>(this.rapportinoUrl, rapportino, this.httpOptions).pipe(
       //tap((newAtleta: Atleta) => this.log(`added hero w/ id=${newAtleta.id}`)),
-      catchError(this.handleError<Commessa>('addHero'))
+      catchError(this.handleError<Rapportino>('addHero'))
     );
   }
 
 
-  getCommessa(id: number): Observable<Commessa> {
-    const url = `${this.commessaUrl}/${id}`;
-    return this.http.get<Commessa>(url).pipe(
+  getRapportino(id: number): Observable<Rapportino> {
+    const url = `${this.rapportinoUrl}/${id}`;
+    return this.http.get<Rapportino>(url).pipe(
      // tap(_ => this.log(`fetched atleta id=${id}`)),
-      catchError(this.handleError<Commessa>(`getCommessa id=${id}`))
+      catchError(this.handleError<Rapportino>(`getRapportino id=${id}`))
     );
   }
 
 
 
     /** PUT: update the hero on the server */
-    updateCommessa(commessa: Commessa): Observable<any> {
-      return this.http.put(this.commessaUrl, commessa, this.httpOptions).pipe(
+    updateRapportino(rapportino: Rapportino): Observable<any> {
+      return this.http.put(this.rapportinoUrl, rapportino, this.httpOptions).pipe(
        // tap(_ => this.log(`updated atleta id=${atleta.id}`)),
-        catchError(this.handleError<any>('updateCommessa'))
+        catchError(this.handleError<any>('updateRapportino'))
       );
     }
 
 
      /** DELETE: delete the hero from the server */
-   deleteCommessa(id: number): Observable<any> {
-    const url = `${this.commessaUrl}/${id}`;
+   deleteRapportino(id: number): Observable<any> {
+    const url = `${this.rapportinoUrl}/${id}`;
 
-    return this.http.delete<Commessa>(url, this.httpOptions).pipe(
+    return this.http.delete<Rapportino>(url, this.httpOptions).pipe(
      
-      catchError(this.handleError<Commessa>('deleteCommessa'))
+      catchError(this.handleError<Rapportino>('deleteRapportino'))
     );
   }
 
@@ -79,4 +79,7 @@ export class CommessaService {
       return of(result as T);
     };
   }
+
+
+
 }

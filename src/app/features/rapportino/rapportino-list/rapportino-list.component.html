@@ -1,0 +1,47 @@
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+    <div class="container">
+
+        <div class="alert alert-success alert-dismissible fade show " role="alert" *ngIf="confirmMessage">
+            {{confirmMessage}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" ></button>
+          </div>
+
+        <div class='card'>
+            <div class='card-header'>
+                <h5>Lista dei risultati</h5>
+            </div>
+            <div class='card-body'>
+                <a class="btn btn-primary " routerLink="/rapportino/insert">Add New</a>
+
+                <div class='table-responsive'>
+                    <table class='table table-hover'>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Numero Giorni</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let rapportinoItem of listaRapportini" >
+                                <td>{{rapportinoItem.id}}</td>
+                                <td>{{rapportinoItem.numeroGiorni}}</td>
+                                <a class="btn  btn-sm btn-outline-primary ml-2 mr-2" [routerLink]="['/rapportino/show', rapportinoItem.id]" >Visualizza dettaglio</a>
+                                <a class="btn btn-sm btn-outline-primary ml-2 mr-2" [routerLink]="['/rapportino/edit', rapportinoItem.id]">Edit</a>
+                                <a class="btn btn-outline-danger btn-sm" [routerLink]="['/rapportino/delete', rapportinoItem.id]">Delete</a>
+
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- end card-body -->
+            </div>
+            <!-- end card -->
+        </div>
+
+        <!-- end container -->
+    </div>
+
+</main>

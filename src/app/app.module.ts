@@ -21,6 +21,13 @@ import { RisorsaEditComponent } from './features/risorsa/risorsa-edit/risorsa-ed
 import { CommessaListComponent } from './features/commessa/commessa-list/commessa-list.component';
 import { CommessaShowComponent } from './features/commessa/commessa-show/commessa-show.component';
 import { CommessaInsertComponent } from './features/commessa/commessa-insert/commessa-insert.component';
+import { CommessaDeleteComponent } from './features/commessa/commessa-delete/commessa-delete.component';
+import { CommessaEditComponent } from './features/commessa/commessa-edit/commessa-edit.component';
+import { RapportinoListComponent } from './features/rapportino/rapportino-list/rapportino-list.component';
+import { RapportinoShowComponent } from './features/rapportino/rapportino-show/rapportino-show.component';
+import { RapportinoInsertComponent } from './features/rapportino/rapportino-insert/rapportino-insert.component';
+import { RapportinoEditComponent } from './features/rapportino/rapportino-edit/rapportino-edit.component';
+import { RapportinoDeleteComponent } from './features/rapportino/rapportino-delete/rapportino-delete.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +48,15 @@ import { CommessaInsertComponent } from './features/commessa/commessa-insert/com
     AziendaDeleteComponent,
     CommessaListComponent,
     CommessaShowComponent,
-    CommessaInsertComponent
+    CommessaInsertComponent,
+    CommessaDeleteComponent,
+    CommessaEditComponent,
+    RapportinoListComponent,
+    RapportinoShowComponent,
+    RapportinoInsertComponent,
+    RapportinoEditComponent,
+    RapportinoDeleteComponent
+    
   ],
   imports: [
     BrowserModule,

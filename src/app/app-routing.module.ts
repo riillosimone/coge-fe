@@ -13,6 +13,7 @@ import { CommessaInsertComponent } from './features/commessa/commessa-insert/com
 import { RisorsaShowComponent } from './features/risorsa/risorsa-show/risorsa-show.component';
 import { RisorsaEditComponent } from './features/risorsa/risorsa-edit/risorsa-edit.component';
 import { RisorsaInsertComponent } from './features/risorsa/risorsa-insert/risorsa-insert.component';
+import { CommessaDeleteComponent } from './features/commessa/commessa-delete/commessa-delete.component';
 
 const routes: Routes = [
   { path: 'azienda/list', component: AziendaListComponent },
@@ -23,6 +24,8 @@ const routes: Routes = [
   { path: 'commessa/list', component: CommessaListComponent },
   { path: 'commessa/show/:id', component:CommessaShowComponent},
   { path: 'commessa/insert', component: CommessaInsertComponent},
+  { path: 'commessa/edit/:id', component: CommessaInsertComponent},
+  { path: 'commessa/delete/:id', component: CommessaDeleteComponent},
   { path: 'risorsa/show/:id', component: RisorsaShowComponent },
   { path: 'risorsa/edit/:id', component: RisorsaEditComponent },
   { path: 'risorsa/insert', component: RisorsaInsertComponent },
