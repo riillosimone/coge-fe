@@ -7,11 +7,6 @@ import { AziendaInsertComponent } from './features/azienda/azienda-insert/aziend
 import { AziendaEditComponent } from './features/azienda/azienda-edit/azienda-edit.component';
 import { RisorsaListComponent } from './features/risorsa/risorsa-list/risorsa-list.component';
 import { AziendaDeleteComponent } from './features/azienda/azienda-delete/azienda-delete.component';
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
 import { CommessaListComponent } from './features/commessa/commessa-list/commessa-list.component';
 import { CommessaShowComponent } from './features/commessa/commessa-show/commessa-show.component';
 import { CommessaInsertComponent } from './features/commessa/commessa-insert/commessa-insert.component';
@@ -20,21 +15,14 @@ import { RisorsaShowComponent } from './features/risorsa/risorsa-show/risorsa-sh
 import { RisorsaInsertComponent } from './features/risorsa/risorsa-insert/risorsa-insert.component';
 import { RisorsaEditComponent } from './features/risorsa/risorsa-edit/risorsa-edit.component';
 import { RisorsaDeleteComponent } from './features/risorsa/risorsa-delete/risorsa-delete.component';
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
->>>>>>> a6f54ae55207e42c6d4c770a772b4b92eaec9239
-=======
 import { AziendaCostoDescComponent } from './features/azienda/azienda-costo-desc/azienda-costo-desc.component';
 import { RisorsaConComesseComponent } from './features/risorsa/risorsa-con-comesse/risorsa-con-comesse.component';
->>>>>>> Stashed changes
-=======
 import { RapportinoListComponent } from './features/rapportino/rapportino-list/rapportino-list.component';
 import { RapportinoShowComponent } from './features/rapportino/rapportino-show/rapportino-show.component';
 import { RapportinoInsertComponent } from './features/rapportino/rapportino-insert/rapportino-insert.component';
 import { CommessaEditComponent } from './features/commessa/commessa-edit/commessa-edit.component';
 import { RapportinoEditComponent } from './features/rapportino/rapportino-edit/rapportino-edit.component';
 import { RapportinoDeleteComponent } from './features/rapportino/rapportino-delete/rapportino-delete.component';
->>>>>>> Stashed changes
 
 const routes: Routes = [
   { path: 'azienda/list', component: AziendaListComponent },
@@ -42,11 +30,6 @@ const routes: Routes = [
   { path: 'azienda/edit/:id', component:AziendaEditComponent},
   { path: 'azienda/show/:id', component:AziendaShowComponent},
   { path: 'azienda/delete/:id', component:AziendaDeleteComponent},
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
   { path: 'commessa/list', component: CommessaListComponent },
   { path: 'commessa/show/:id', component:CommessaShowComponent},
   { path: 'commessa/insert', component: CommessaInsertComponent},
@@ -60,15 +43,10 @@ const routes: Routes = [
   { path: 'risorsa/show/:id', component: RisorsaShowComponent },
   { path: 'risorsa/edit/:id', component: RisorsaEditComponent },
   { path: 'risorsa/insert', component: RisorsaInsertComponent },
-=======
   { path: 'azienda/listacostodesc', component:AziendaCostoDescComponent},
   { path: 'risorsa/riepilogoconcommesse', component:RisorsaConComesseComponent},
-
-
->>>>>>> Stashed changes
   { path: 'risorsa/list', component: RisorsaListComponent },
   { path: 'risorsa/delete/:id', component:RisorsaDeleteComponent},
-
   { path: 'welcome', component: WelcomeComponent },
   { path: '', redirectTo: '/welcome', pathMatch: 'full' }
 ];

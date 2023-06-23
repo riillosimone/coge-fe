@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Rapportino } from 'src/app/model/rapportino';
+import { Risorsa } from 'src/app/model/risorsa';
 import { RapportinoService } from 'src/app/service/rapportino/rapportino.service';
+import { RisorsaService } from 'src/app/service/risorsa/risorsa.service';
 
 @Component({
   selector: 'coge-rapportino-edit',
@@ -11,37 +13,42 @@ import { RapportinoService } from 'src/app/service/rapportino/rapportino.service
 })
 export class RapportinoEditComponent implements OnInit {
 
-
- constructor(private rapportinoService: RapportinoService, private route: ActivatedRoute, private router: Router){ }
- 
-
-  ngOnInit(): void {
-    this.rapportinoService.getRapportino(Number(this.route.snapshot.paramMap.get('id')))
-    .subscribe(rapportino => this.rapportinoEdit = rapportino);
-  }
-
-  onBack(): void{
-    this.router.navigate(['/rapportino/list']);
-  }
-
+  rapportino: Rapportino = new Rapportino();
+  errorMessage: string = '';
+  listaRisorse?: Risorsa[];
   rapportinoEdit?:Rapportino;
 
-  errorMessage: string = '';
+  constructor(private rapportinoService: RapportinoService, private risorsaService: RisorsaService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
-  update(rapportinoForm: NgForm): void{
-    console.log('sub' + JSON.stringify(this.rapportinoEdit));
-    if(rapportinoForm.valid){
-      if(this.rapportinoEdit){
-        this.rapportinoService.insertRapportino(this.rapportinoEdit).subscribe({
-          next: rapportinoItem => this.rapportinoEdit = rapportinoItem,
-          complete: () => this.router.navigate([`rapportino/list`], { queryParams: { confirmMessage: 'Operazione effettuata correttamente.'}})
-          
-        });}
-
-      } else
-       this.errorMessage = 'Attenzione! Operazione fallita! il form non è stato validato';
-      }
+  ngOnInit(): void {
+    const id = this.activatedRoute.snapshot.paramMap.get('id');
+    if (id) {
+      this.rapportinoService.getRapportino(+id).subscribe({
+        next: rapportino => {
+          this.rapportino = rapportino;
+        },
+        error: err => this.errorMessage = err
+      });
     }
+    this.risorsaService.getRisorse().subscribe({
+      next: risorse => this.listaRisorse = risorse
+    });
+  }
+
+  update(rapportinoForm: NgForm): void {
+    if (rapportinoForm.valid) {
+      this.rapportinoService.updateRapportino(this.rapportino).subscribe({
+        complete: () => this.router.navigate([`rapportino/list`], { queryParams: { confirmMessage: 'Operazione effettuata correttamente.' } })
+      });
+    } else {
+      this.errorMessage = 'Attenzione ! Operazione fallita! Il form non è stato validato';
+    }
+  }
+
+  onBack(): void {
+    this.router.navigate(['/rapportino/list']);
+  }
+}
   
 
 

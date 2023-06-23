@@ -1,9 +1,10 @@
 import { Risorsa } from "./risorsa";
 
-export class Rapportino {
+export class RapportinoRisorsa {
     constructor(
         public id?:number,
        public numeroGiorni?:number,
-       public risorsa_id?:Risorsa
+       public risorsa?:Risorsa
+       
     ){}
 }

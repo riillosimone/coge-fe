@@ -1,23 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Rapportino } from 'src/app/model/rapportino';
+import { Risorsa } from 'src/app/model/risorsa';
 import { RapportinoService } from 'src/app/service/rapportino/rapportino.service';
+import { RisorsaService } from 'src/app/service/risorsa/risorsa.service';
 
 @Component({
   selector: 'coge-rapportino-insert',
   templateUrl: './rapportino-insert.component.html',
   styleUrls: ['./rapportino-insert.component.css']
 })
-export class RapportinoInsertComponent {
+export class RapportinoInsertComponent implements OnInit{
 
   rapportino: Rapportino = new Rapportino();
   errorMessage: string = '';
 
-  constructor(private rapportinoService: RapportinoService, private router: Router) {}
+  constructor(private rapportinoService: RapportinoService,private risorsaService: RisorsaService, private router: Router) {}
   
-  ngOnInit():void {
+  listaRisorse?:Risorsa[];
 
+
+  ngOnInit():void {
+     this.risorsaService.getRisorse().subscribe({
+    next: risorse => this.listaRisorse = risorse
+  });
   }
 
   save(rapportinoForm: NgForm): void{

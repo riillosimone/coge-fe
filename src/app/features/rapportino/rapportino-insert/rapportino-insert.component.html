@@ -28,6 +28,19 @@
                         </span>
                     </div>
 
+                    <div class="form-row" >
+                        <div class="form-group col-md-6">
+                            <label for="azienda.id">Risorsa</label>
+                            <select class="form-control" id="risorsa" name="risorsa" [(ngModel)]="rapportino.risorsa_id">
+                                <option value="" selected> -- Selezionare una risorsa -- </option>
+                                <option *ngFor="let risorsa of listaRisorse" [value]="risorsa.id"  >{{
+                                    risorsa.nome }} {{
+                                        risorsa.cognome }}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="col-12">
                         <button type="submit" name="submit" value="submitValue" id="submitId"
                             class="btn btn-primary"  [disabled]="!rapportinoForm.form.valid">Conferma</button>

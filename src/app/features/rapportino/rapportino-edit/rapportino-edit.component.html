@@ -1,4 +1,3 @@
-<!-- Begin page content -->
 <main class="flex-shrink-0">
     <div class="container">
 
@@ -10,17 +9,17 @@
 
         <div class='card'>
             <div class='card-header'>
-                <h5>Inserisci nuovo elemento</h5>
+                <h5>Modifica elemento</h5>
             </div>
-            <div class='card-body' *ngIf="rapportinoEdit">
+            <div class='card-body'>
 
-                <form (ngSubmit)="update(atletaForm)" #atletaForm="ngForm" class="row g-3">
+                <form (ngSubmit)="update(rapportinoForm)" #rapportinoForm="ngForm" class="row g-3">
 
 
                     <div class="col-md-6">
                         <label>Numero Giorni <span class="text-danger">*</span></label>
-                        <input type="number" class="form-control" placeholder="Inserire il numero di Giorni" required min="1"
-                            id="numeroGiorni" name="numeroGiorni" [(ngModel)]="rapportinoEdit.numeroGiorni" #numeroGiorniVar="ngModel"
+                        <input type="number" class="form-control" placeholder="Inserire numero giorni" required min="1"
+                            id="numeroGiorni" name="numeroGiorni" [(ngModel)]="rapportino.numeroGiorni" #numeroGiorniVar="ngModel"
                             [ngClass]="{'is-invalid': (numeroGiorniVar.touched || numeroGiorniVar.dirty) && !numeroGiorniVar.valid }">
                         <span class="invalid-feedback">
                             <span *ngIf="numeroGiorniVar.errors?.['required']">
@@ -29,10 +28,22 @@
                         </span>
                     </div>
 
+                    <div class="form-row" >
+                        <div class="form-group col-md-6">
+                            <label for="azienda.id">Risorsa</label>
+                            <select class="form-control" id="risorsa" name="risorsa" [(ngModel)]="rapportino.risorsa_id">
+                                <option value="" selected> -- Selezionare una risorsa -- </option>
+                                <option *ngFor="let risorsa of listaRisorse" [value]="risorsa.id"  >{{
+                                    risorsa.nome }} {{
+                                        risorsa.cognome }}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="col-12">
-                        
-                        <button type="submit" name="submitSave" value="submit" id="submitSave" class="btn btn-primary"
-                            [disabled]="!atletaForm.form.valid">Conferma</button>
+                        <button type="submit" name="submit" value="submitValue" id="submitId"
+                            class="btn btn-primary"  [disabled]="!rapportinoForm.form.valid">Conferma</button>
                     </div>
 
                     <div class='card-footer'>
