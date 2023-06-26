@@ -1,3 +1,4 @@
+import { Data } from "@angular/router";
 import { Risorsa } from "./risorsa";
 
 export class Attachment {
@@ -8,9 +9,9 @@ export class Attachment {
         public contentType?:string,
         public descrizione?:string,
         public dataCreazione?:Date,
-        public payload?:string,
+        public payload?:number[],
         public risorsa?:Risorsa
     ) { }
-    
+        
 
 }

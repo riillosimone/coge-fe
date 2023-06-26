@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Attachment } from 'src/app/model/attachment';
 import { Risorsa } from 'src/app/model/risorsa';
 import { RisorsaService } from 'src/app/service/risorsa/risorsa.service';
 
@@ -15,9 +16,11 @@ export class RisorsaEditComponent implements OnInit {
   ngOnInit(): void {
     this.risorsaService.getRisorsa(Number(this.route.snapshot.paramMap.get('id')))
       .subscribe(risorsa => this.risorsaEdit = risorsa);
+    
   }
 
   risorsaEdit?: Risorsa;
+  
   errorMessage: string = '';
 
   update(risorsaForm: NgForm): void {
@@ -26,7 +29,7 @@ export class RisorsaEditComponent implements OnInit {
       if (this.risorsaEdit) {
 
 
-        this.risorsaService.addRisorsa(this.risorsaEdit).subscribe({
+        this.risorsaService.updateRisorsa(this.risorsaEdit).subscribe({
           next: risorsaItem => this.risorsaEdit = risorsaItem,
           complete: () => this.router.navigate([`risorsa/list`], { queryParams: { confirmMessage: 'Operazione effettuata correttamente.' } })
         });
@@ -36,5 +39,29 @@ export class RisorsaEditComponent implements OnInit {
   }
   onBack(): void {
     this.router.navigate(['/risorsa/list']);
+  }
+
+  handleCVFile(event: any): void {
+    const files: FileList = event.target.files;
+    if (files && files.length > 0) {
+      const fileReader = new FileReader();
+      fileReader.onload = () => {
+        const payload: Uint8Array = new Uint8Array(fileReader.result as ArrayBuffer);
+        const attachment: Attachment = {
+          id: undefined,
+          fileName: files[0].name,
+          contentType: files[0].type,
+          descrizione: 'tipo1',
+          dataCreazione: new Date(),
+          payload: Array.from(payload) // Converti Uint8Array in un array di numeri
+        };
+        if (this.risorsaEdit) {
+          this.risorsaEdit.cv = attachment;
+        }
+        
+        
+      };
+      fileReader.readAsArrayBuffer(files[0]);
+    }
   }
 }

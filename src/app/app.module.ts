@@ -10,6 +10,7 @@ import { FooterComponent } from './core/footer/footer.component';
 import { NavbarComponent } from './core/navbar/navbar.component';
 import { AziendaCostoDescComponent } from './features/azienda/azienda-costo-desc/azienda-costo-desc.component';
 import { AziendaDeleteComponent } from './features/azienda/azienda-delete/azienda-delete.component';
+<<<<<<< Updated upstream
 import { AziendaEditComponent } from './features/azienda/azienda-edit/azienda-edit.component';
 import { AziendaInsertComponent } from './features/azienda/azienda-insert/azienda-insert.component';
 import { AziendaListComponent } from './features/azienda/azienda-list/azienda-list.component';
@@ -71,5 +72,45 @@ import { WelcomeComponent } from './features/welcome/welcome.component';
     ],
     providers: [],
     bootstrap: [AppComponent]
+=======
+import { RisorsaShowComponent } from './features/risorsa/risorsa-show/risorsa-show.component';
+import { RisorsaInsertComponent } from './features/risorsa/risorsa-insert/risorsa-insert.component';
+import { RisorsaEditComponent } from './features/risorsa/risorsa-edit/risorsa-edit.component';
+import { CommessaListComponent } from './features/commessa/commessa-list/commessa-list.component';
+import { CommessaShowComponent } from './features/commessa/commessa-show/commessa-show.component';
+import { CommessaInsertComponent } from './features/commessa/commessa-insert/commessa-insert.component';
+import { RisorsaDeleteComponent } from './features/risorsa/risorsa-delete/risorsa-delete.component';
+import { FileUploadComponent } from './features/fileUpload/file-upload/file-upload.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    FooterComponent,
+    WelcomeComponent,
+    AziendaListComponent,
+    AziendaShowComponent,
+    AziendaInsertComponent,
+    AziendaEditComponent,
+    AziendaDeleteComponent,
+    RisorsaListComponent,
+    RisorsaShowComponent,
+    RisorsaInsertComponent,
+    RisorsaEditComponent,
+    RisorsaDeleteComponent,
+    CommessaListComponent,
+    CommessaShowComponent,
+    CommessaInsertComponent,
+    FileUploadComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+>>>>>>> Stashed changes
 })
 export class AppModule { }

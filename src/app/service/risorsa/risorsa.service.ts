@@ -1,6 +1,7 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, of } from 'rxjs';
+import { Attachment } from 'src/app/model/attachment';
 import { Risorsa } from 'src/app/model/risorsa';
 
 @Injectable({
@@ -9,6 +10,7 @@ import { Risorsa } from 'src/app/model/risorsa';
 export class RisorsaService {
 
   private risorsaUrl = 'http://localhost:8080/coge/api/risorsa';
+  private attachmentUrl = 'http://localhost:8080/coge/api/attachment';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -36,22 +38,27 @@ export class RisorsaService {
     return this.http.post<Risorsa>(this.risorsaUrl, risorsa, this.httpOptions);
   }
 
-   /** DELETE: delete the hero from the server */
-   deleteRisorsa(id: number): Observable<any> {
+  
+
+  
+
+
+  /** DELETE: delete the hero from the server */
+  deleteRisorsa(id: number): Observable<any> {
     const url = `${this.risorsaUrl}/delete/${id}`;
 
     return this.http.delete<Risorsa>(url, this.httpOptions).pipe(
-     
+
       catchError(this.handleError<Risorsa>('deleteRisorsa'))
     );
   }
 
 
-   /** PUT: update the hero on the server */
-   updateRisorsa(risorsa: Risorsa): Observable<any> {
-    const url = `${this.risorsaUrl}/edit`;
+  /** PUT: update the hero on the server */
+  updateRisorsa(risorsa: Risorsa): Observable<any> {
+    const url = `${this.risorsaUrl}/edit/${risorsa.id}`;
     return this.http.put(url, risorsa, this.httpOptions).pipe(
-     
+
       catchError(this.handleError<any>('updateRisorsa'))
     );
   }

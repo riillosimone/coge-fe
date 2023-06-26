@@ -1,3 +1,5 @@
+import { Azienda } from "./azienda";
+
 export class Commessa {
     constructor(
         public id?:number,
@@ -5,6 +7,7 @@ export class Commessa {
         public codice?:string,
         public dataIn?:Date,
         public dataOut?:Date,
-        public importo?:number
+        public importo?:number,
+        public azienda?:Azienda
     ){}
 }

@@ -88,11 +88,17 @@
                             minlength="2" id="costoGiornaliero" name="costoGiornaliero" [(ngModel)]="risorsaEdit.costoGiornaliero"
                             #costoGiornalieroVar="ngModel">
                     </div>
-                    <div class="col-md-6">
-                        <label>Curriculum Vitae</label>
-                        <input type="file" class="form-control" placeholder="Inserire il cv" id="cv" name="cv" [(ngModel)]="risorsaEdit.cv"
-                            #cvVar="ngModel">
-                    </div>
+                    <div class="col-md-6" >
+                        <label>CV</label>
+                        <input
+                          type="file"
+                          class="form-control"
+                          required
+                          id="cv"
+                          name="cv"
+                          (change)="handleCVFile($event)"
+                        />
+                      </div>
 
 
                     <div class="col-12">
