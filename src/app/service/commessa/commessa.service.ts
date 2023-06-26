@@ -46,7 +46,8 @@ export class CommessaService {
 
     /** PUT: update the hero on the server */
     updateCommessa(commessa: Commessa): Observable<any> {
-      return this.http.put(this.commessaUrl, commessa, this.httpOptions).pipe(
+      const url = `${this.commessaUrl}/${commessa.id}`;
+      return this.http.put(url, commessa, this.httpOptions).pipe(
        // tap(_ => this.log(`updated atleta id=${atleta.id}`)),
         catchError(this.handleError<any>('updateCommessa'))
       );

@@ -2,7 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+<<<<<<< Updated upstream
 import { catchError, map, of } from 'rxjs';
+=======
+>>>>>>> Stashed changes
 import { Azienda } from 'src/app/model/azienda';
 import { Commessa } from 'src/app/model/commessa';
 import { AziendaService } from 'src/app/service/azienda/azienda.service';
@@ -17,6 +20,7 @@ export class CommessaInsertComponent implements OnInit{
   commessa: Commessa = new Commessa();
   errorMessage: string = '';
 
+<<<<<<< Updated upstream
   searchText?: string;
   searchResults: string[] = [];
 
@@ -28,6 +32,17 @@ export class CommessaInsertComponent implements OnInit{
   onConferma() {
     this.aziendaService.getAzienda(Number(this.idAzienda))
       .subscribe(azienda => this.commessa.azienda = azienda);
+=======
+  constructor(private commessaService: CommessaService,private aziendaService: AziendaService, private router: Router) {}
+  
+  listaAziende?:Azienda[];
+
+
+  ngOnInit():void {
+    this.aziendaService.getAziende().subscribe({
+      next: aziende => this.listaAziende = aziende
+    });
+>>>>>>> Stashed changes
   }
 
   ngOnInit(): void {

@@ -8,6 +8,10 @@ export class Commessa {
         public dataIn?:Date,
         public dataOut?:Date,
         public importo?:number,
+<<<<<<< Updated upstream
         public azienda?:Azienda
+=======
+        public azienda_id?:Azienda
+>>>>>>> Stashed changes
     ){}
 }

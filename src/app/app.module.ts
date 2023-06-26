@@ -20,7 +20,6 @@ import { CommessaEditComponent } from './features/commessa/commessa-edit/commess
 import { CommessaInsertComponent } from './features/commessa/commessa-insert/commessa-insert.component';
 import { CommessaListComponent } from './features/commessa/commessa-list/commessa-list.component';
 import { CommessaShowComponent } from './features/commessa/commessa-show/commessa-show.component';
-import { RapportinoConRisorseComponent } from './features/rapportino/rapportino-con-risorse/rapportino-con-risorse.component';
 import { RapportinoDeleteComponent } from './features/rapportino/rapportino-delete/rapportino-delete.component';
 import { RapportinoEditComponent } from './features/rapportino/rapportino-edit/rapportino-edit.component';
 import { RapportinoInsertComponent } from './features/rapportino/rapportino-insert/rapportino-insert.component';
@@ -60,7 +59,6 @@ import { WelcomeComponent } from './features/welcome/welcome.component';
         RapportinoInsertComponent,
         RapportinoEditComponent,
         RapportinoDeleteComponent,
-        RapportinoConRisorseComponent,
         AziendaCostoDescComponent,
         RisorsaConComesseComponent,
     ],

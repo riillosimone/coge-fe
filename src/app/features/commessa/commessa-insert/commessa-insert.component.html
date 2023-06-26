@@ -86,6 +86,7 @@
                         </span>
                     </div>
 
+<<<<<<< Updated upstream
                     <div class="form-row" >
                         <div class="form-group col-md-6">
                             <label for="azienda.id">Azienda</label>
@@ -93,13 +94,30 @@
                                 <option value="" selected> -- Selezionare un'azienda -- </option>
                                 <option *ngFor="let azienda of listaaziende" [value]="azienda.id"  >{{
                                     azienda.ragioneSociale }}</option>
+=======
+
+                    <div class="form-row" >
+                        <div class="form-group col-md-6">
+                            <label for="azienda.id">Azienda</label>
+                            <select class="form-control" id="azienda" name="azienda" [(ngModel)]="commessa.azienda_id">
+                                <option value="" selected> -- Selezionare una azienda -- </option>
+                                <option *ngFor="let azienda of listaAziende" [value]="azienda.id"  >{{
+                                    azienda.ragioneSociale }} {{
+                                        azienda.partitaIva }} {{
+                                            azienda.indirizzo
+                                        }}
+                                </option>
+>>>>>>> Stashed changes
                             </select>
                         </div>
                     </div>
 
+<<<<<<< Updated upstream
 
 
 
+=======
+>>>>>>> Stashed changes
                     <div class="col-12">
                         <button type="submit" name="submit" value="submitValue" id="submitId" class="btn btn-primary"
                             [disabled]="!commessaForm.form.valid" (click)="onConferma()">Conferma</button>
