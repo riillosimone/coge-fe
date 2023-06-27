@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './core/footer/footer.component';
 import { NavbarComponent } from './core/navbar/navbar.component';
 import { AziendaCostoDescComponent } from './features/azienda/azienda-costo-desc/azienda-costo-desc.component';
 import { AziendaDeleteComponent } from './features/azienda/azienda-delete/azienda-delete.component';
-<<<<<<< Updated upstream
 import { AziendaEditComponent } from './features/azienda/azienda-edit/azienda-edit.component';
 import { AziendaInsertComponent } from './features/azienda/azienda-insert/azienda-insert.component';
 import { AziendaListComponent } from './features/azienda/azienda-list/azienda-list.component';
@@ -34,6 +33,7 @@ import { RisorsaShowComponent } from './features/risorsa/risorsa-show/risorsa-sh
 import { WelcomeComponent } from './features/welcome/welcome.component';
 
 @NgModule({
+<<<<<<< Updated upstream
     declarations: [
         AppComponent,
         NavbarComponent,
@@ -81,6 +81,8 @@ import { RisorsaDeleteComponent } from './features/risorsa/risorsa-delete/risors
 import { FileUploadComponent } from './features/fileUpload/file-upload/file-upload.component';
 
 @NgModule({
+=======
+>>>>>>> Stashed changes
   declarations: [
     AppComponent,
     NavbarComponent,
@@ -99,16 +101,26 @@ import { FileUploadComponent } from './features/fileUpload/file-upload/file-uplo
     CommessaListComponent,
     CommessaShowComponent,
     CommessaInsertComponent,
-    FileUploadComponent
+    CommessaDeleteComponent,
+    CommessaEditComponent,
+    RapportinoListComponent,
+    RapportinoShowComponent,
+    RapportinoInsertComponent,
+    RapportinoEditComponent,
+    RapportinoDeleteComponent,
+    AziendaCostoDescComponent,
+    RisorsaConComesseComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
->>>>>>> Stashed changes
+
 })
 export class AppModule { }
