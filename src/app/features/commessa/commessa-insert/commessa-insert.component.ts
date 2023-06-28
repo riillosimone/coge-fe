@@ -25,10 +25,7 @@ export class CommessaInsertComponent implements OnInit{
   constructor(private commessaService: CommessaService, private router: Router, private aziendaService: AziendaService,private http: HttpClient) { }
 
 
-  onConferma() {
-    this.aziendaService.getAzienda(Number(this.idAzienda))
-      .subscribe(azienda => this.commessa.azienda = azienda);
-  }
+
   ngOnInit(): void {
     this.aziendaService.getAziende().subscribe(aziendeList => this.listaaziende = aziendeList);
   }

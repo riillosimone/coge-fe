@@ -18,9 +18,10 @@ export class AggiungiCommesseComponent implements OnInit {
   constructor(private risorsaService: RisorsaService, private commessaService: CommessaService, private route: ActivatedRoute, private router: Router) { }
 
   @Input() risorsaCaricata?:Risorsa;
-  listaCommesse?: Commessa[];
+  listaCommesse: any[] = [];
   sub?: Subscription;
   selectedItems: any[] = [];
+  idsCommesse:any[] = [];
 
   ngOnInit(): void {
     // this.risorsaService.getRisorsa(this.risorsaCaricata!.id!)
@@ -29,11 +30,17 @@ export class AggiungiCommesseComponent implements OnInit {
   }
 
   onAggiungiCommesse(): void {
-    this.risorsaService.updateRisorsa(this.risorsaCaricata!).subscribe({
-      next: risorsaItem => this.risorsaCaricata = risorsaItem
-      // complete: () => this.router.navigate([`risorsa/show/${this.risorsaCaricata!.id}`], { queryParams: { confirmMessage: 'Operazione effettuata correttamente.' } })
-    });
+    console.log(this.idsCommesse);
+    // this.risorsaService.updateRisorsa(this.risorsaCaricata!).subscribe({
+    //   next: risorsaItem => this.risorsaCaricata = risorsaItem
+    //   // complete: () => this.router.navigate([`risorsa/show/${this.risorsaCaricata!.id}`], { queryParams: { confirmMessage: 'Operazione effettuata correttamente.' } })
+    // });
     this.editNotify.emit(false);
+  }
+  updateIdsCommesse() {
+    this.idsCommesse = this.selectedItems
+      .filter((commessa) => commessa)
+      .map((commessa) => commessa.id);
   }
 
 

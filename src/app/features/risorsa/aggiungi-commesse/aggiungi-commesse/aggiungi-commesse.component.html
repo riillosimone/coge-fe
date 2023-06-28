@@ -11,14 +11,14 @@
                 <label for="commesse" class="form-label">Commesse</label>
                 <div *ngFor="let commessa of listaCommesse; let i=index">
                   <label for="{{ commessa.id }}">
-                    <input [(ngModel)]="selectedItems[i]" type="checkbox" [id]="commessa.id" name="commesse" >
-                    {{ commessa.descrizione }}
+                    <input [(ngModel)]="idsCommesse![commessa.id]" type="checkbox" [id]="commessa.id" name="commesse" >
+                    {{ commessa.descrizione }} - 
                   </label>
                 </div>
               </div>
 
 
-            
+              {{idsCommesse | json}}
 
             <div class="col-12" style="margin-top: 0.5em;">
                 <button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary"
