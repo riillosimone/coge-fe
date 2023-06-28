@@ -8,8 +8,16 @@
       
           <div class='card-body'>
               <dl class="row">
-                <dt class="col-sm-3 text-right">numero Giorni:</dt>
+                <dt class="col-sm-3 text-right">Numero Giorni:</dt>
                 <dd class="col-sm-9">{{rapportinoDetail?.numeroGiorni}}</dd>
+              </dl>
+              <dl class="row">
+                <dt class="col-sm-3 text-right">Risorsa:</dt>
+                <dd class="col-sm-9">{{rapportinoDetail?.risorsa?.cognome}} {{rapportinoDetail?.risorsa?.nome}}</dd>
+              </dl>
+              <dl class="row">
+                <dt class="col-sm-3 text-right">Commessa:</dt>
+                <dd class="col-sm-9">{{rapportinoDetail?.commessa?.descrizione}}</dd>
               </dl>  
               </div>
               <div class='card-footer'>

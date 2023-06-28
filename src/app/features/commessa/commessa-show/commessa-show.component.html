@@ -27,6 +27,18 @@
                 <dt class="col-sm-3 text-right">Importo:</dt>
                 <dd class="col-sm-9">{{commessaDetail?.importo}}</dd>
               </dl>
+              <dl class="row">
+                <dt class="col-sm-3 text-right">Azienda:</dt>
+                <dd class="col-sm-9">{{commessaDetail?.azienda?.ragioneSociale}}</dd>
+              </dl>
+              <dl class="row">
+                <dt class="col-sm-3 text-right">Risorsa:</dt>
+                <dd class="col-sm-9">
+                  <ul>
+                    <li *ngFor="let risorsa of commessaDetail?.risorse">{{risorsa.nome}} {{risorsa.cognome}}</li>
+                  </ul>
+                </dd>
+              </dl>
               
               </div>
               <div class='card-footer'>

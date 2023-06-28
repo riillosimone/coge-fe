@@ -1,4 +1,5 @@
 import { Azienda } from "./azienda";
+import { Risorsa } from "./risorsa";
 
 export class Commessa {
     constructor(
@@ -8,10 +9,7 @@ export class Commessa {
         public dataIn?:Date,
         public dataOut?:Date,
         public importo?:number,
-<<<<<<< Updated upstream
-        public azienda?:Azienda
-=======
-        public azienda_id?:Azienda
->>>>>>> Stashed changes
+        public azienda?:Azienda,
+        public risorse?:Risorsa[]
     ){}
 }

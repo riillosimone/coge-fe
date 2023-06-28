@@ -31,7 +31,7 @@
                     <div class="form-row" >
                         <div class="form-group col-md-6">
                             <label for="azienda.id">Risorsa</label>
-                            <select class="form-control" id="risorsa" name="risorsa" [(ngModel)]="rapportino.risorsa_id">
+                            <select class="form-control" id="risorsa" name="risorsa" [(ngModel)]="rapportino.risorsa">
                                 <option value="" selected> -- Selezionare una risorsa -- </option>
                                 <option *ngFor="let risorsa of listaRisorse" [value]="risorsa.id"  >{{
                                     risorsa.nome }} {{

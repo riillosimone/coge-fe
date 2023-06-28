@@ -24,6 +24,7 @@
                                 <th>DataIn</th>
                                 <th>DataOut</th>
                                 <th>Importo</th>
+                                <th>Azioni</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,10 +35,11 @@
                                 <td>{{commessaItem.dataIn | date:'dd/MM/yyyy'}}</td>
                                 <td>{{commessaItem.dataOut | date:'dd/MM/yyyy'}}</td>
                                 <td>{{commessaItem.importo}}</td>
-                                <a class="btn  btn-sm btn-outline-primary ml-2 mr-2" [routerLink]="['/commessa/show', commessaItem.id]" >Visualizza dettaglio</a>
-                                <a class="btn btn-sm btn-outline-primary ml-2 mr-2" [routerLink]="['/commessa/edit', commessaItem.id]">Edit</a>
-                                <a class="btn btn-outline-danger btn-sm" [routerLink]="['/commessa/delete', commessaItem.id]">Delete</a>
-
+                                <td>
+                                 <a class="btn  btn-sm btn-outline-primary ml-auto mr-auto" style='margin-right: 5px;' [routerLink]="['/commessa/show', commessaItem.id]" >Visualizza dettaglio</a>
+                                 <a class="btn  btn-sm btn-outline-primary ml-auto mr-auto" style='margin-right: 5px;' [routerLink]="['/commessa/edit', commessaItem.id]">Edit</a>
+                                 <a class="btn btn-outline-danger btn-sm ml-auto mr-auto" [routerLink]="['/commessa/delete', commessaItem.id]">Delete</a>
+                                </td>
 
                             </tr>
                         </tbody>

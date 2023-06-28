@@ -89,7 +89,7 @@
                     <div class="form-row" >
                         <div class="form-group col-md-6">
                             <label for="azienda.id">Azienda</label>
-                            <select class="form-control" id="azienda" name="azienda" [(ngModel)]="commessa.azienda_id">
+                            <select class="form-control" id="azienda" name="azienda" [(ngModel)]="commessa.azienda">
                                 <option value="" selected> -- Selezionare una azienda -- </option>
                                 <option *ngFor="let azienda of listaAziende" [value]="azienda.id"  >{{
                                     azienda.ragioneSociale }} {{

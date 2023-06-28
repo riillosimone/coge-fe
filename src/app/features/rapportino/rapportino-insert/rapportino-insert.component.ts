@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Commessa } from 'src/app/model/commessa';
 import { Rapportino } from 'src/app/model/rapportino';
 import { Risorsa } from 'src/app/model/risorsa';
+import { CommessaService } from 'src/app/service/commessa/commessa.service';
 import { RapportinoService } from 'src/app/service/rapportino/rapportino.service';
 import { RisorsaService } from 'src/app/service/risorsa/risorsa.service';
 
@@ -16,14 +18,18 @@ export class RapportinoInsertComponent implements OnInit{
   rapportino: Rapportino = new Rapportino();
   errorMessage: string = '';
 
-  constructor(private rapportinoService: RapportinoService,private risorsaService: RisorsaService, private router: Router) {}
+  constructor(private rapportinoService: RapportinoService,private risorsaService: RisorsaService,private commessaService: CommessaService, private router: Router) {}
   
   listaRisorse?:Risorsa[];
+  listaCommesse?:Commessa[];
 
 
   ngOnInit():void {
      this.risorsaService.getRisorse().subscribe({
-    next: risorse => this.listaRisorse = risorse
+    next: risorse => this.listaRisorse = risorse,
+  });
+  this.commessaService.listAll().subscribe({
+    next: commesse => this.listaCommesse = commesse
   });
   }
 

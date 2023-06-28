@@ -20,16 +20,20 @@
                             <tr>
                                 <th>Id</th>
                                 <th>Numero Giorni</th>
+                                <th>Risorsa</th>
+                                <th>Azioni</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor="let rapportinoItem of listaRapportini" >
                                 <td>{{rapportinoItem.id}}</td>
                                 <td>{{rapportinoItem.numeroGiorni}}</td>
-                                <a class="btn  btn-sm btn-outline-primary ml-2 mr-2" [routerLink]="['/rapportino/show', rapportinoItem.id]" >Visualizza dettaglio</a>
-                                <a class="btn btn-sm btn-outline-primary ml-2 mr-2" [routerLink]="['/rapportino/edit', rapportinoItem.id]">Edit</a>
-                                <a class="btn btn-outline-danger btn-sm" [routerLink]="['/rapportino/delete', rapportinoItem.id]">Delete</a>
-
+                                <td>{{rapportinoItem.risorsa!.cognome}} {{rapportinoItem.risorsa!.nome}}</td>
+                                <td>
+                                <a class="btn  btn-sm btn-outline-primary ml-auto mr-auto" style='margin-right: 5px;' [routerLink]="['/rapportino/show', rapportinoItem.id]" >Visualizza dettaglio</a>
+                                <a class="btn  btn-sm btn-outline-primary ml-auto mr-auto" style='margin-right: 5px;' [routerLink]="['/rapportino/edit', rapportinoItem.id]">Edit</a>
+                                <a class="btn btn-outline-danger btn-sm ml-auto mr-auto" [routerLink]="['/rapportino/delete', rapportinoItem.id]">Delete</a>
+                                </td>
 
                             </tr>
                         </tbody>
