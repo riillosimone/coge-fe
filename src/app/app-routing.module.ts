@@ -44,11 +44,8 @@ const routes: Routes = [
   { path: 'azienda/listacostodesc', component:AziendaCostoDescComponent},
   { path: 'risorsa/riepilogoconcommesse', component:RisorsaConComesseComponent},
   { path: 'risorsa/list', component: RisorsaListComponent },
-<<<<<<< Updated upstream
-=======
   { path: 'risorsa/edit/:id', component: RisorsaEditComponent },
   { path: 'risorsa/show/:id', component: RisorsaShowComponent },
->>>>>>> Stashed changes
   { path: 'risorsa/delete/:id', component:RisorsaDeleteComponent},
   { path: 'welcome', component: WelcomeComponent },
   { path: '', redirectTo: '/welcome', pathMatch: 'full' }

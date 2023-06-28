@@ -16,8 +16,17 @@ export class RisorsaShowComponent implements OnInit {
       .subscribe(risorsa => this.risorsaDetail = risorsa);
   }
 
-  constructor(private risorsaService: RisorsaService, private route: ActivatedRoute, private router: Router, private http:HttpClient) { }
+  constructor(private risorsaService: RisorsaService, private route: ActivatedRoute, private router: Router, private http: HttpClient) { }
 
+  myMap = new Map<string, string>([
+    ["application/pdf", "pdf"],
+    ["application/vnd.openxmlformats-officedocument.wordprocessingml.document", "docx"],
+    ["application/msword", "doc"]
+  ]);
+
+
+
+  aggiungiCommesseToggle: boolean = false;
   risorsaDetail?: Risorsa;
   onBack(): void {
     this.router.navigate(['/risorsa/list']);
@@ -29,22 +38,23 @@ export class RisorsaShowComponent implements OnInit {
     return bytes.map((byte, i) => binaryString.charCodeAt(i));
   }
 
-  createAndDownloadBlobFile(body:any, filename:any) {
+  createAndDownloadBlobFile(body: any, filename: any) {
     const blob = new Blob([body]);
-    const fileName = `${filename}`;
-    
-      const link = document.createElement('a');
-      link.setAttribute('target',"_blank");
-      // Browsers that support HTML5 download attribute
-      if (link.download !== undefined) {
-        const url = URL.createObjectURL(blob);
-        link.setAttribute('href', url);
-        link.setAttribute('download', fileName);
-        link.style.visibility = 'hidden';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      }
+    const extension = this.checkContentType(this.risorsaDetail!.cv!.contentType!);
+    const fileName = `${filename}.${extension}`;
+
+    const link = document.createElement('a');
+    link.setAttribute('target', "_blank");
+    // Browsers that support HTML5 download attribute
+    if (link.download !== undefined) {
+      const url = URL.createObjectURL(blob);
+      link.setAttribute('href', url);
+      link.setAttribute('download', fileName);
+      link.style.visibility = 'hidden';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   }
 
   downloadPdf(id: number) {
@@ -53,11 +63,26 @@ export class RisorsaShowComponent implements OnInit {
     this.http.get(attachmentUrl)
       .subscribe(
         (base64Pdf: any) => {
-          
+
           const arrayBuffer = this.base64ToArrayBuffer(base64Pdf.payload);
           this.createAndDownloadBlobFile(arrayBuffer, 'testName');
         },
         error => console.error(error)
       )
+  }
+
+  checkContentType(contentType: string): string {
+    let extension = this.myMap.get(contentType);
+    if (extension !== undefined) {
+      return extension;
+    }
+    throw new Error(`Key "${contentType}" not found in predefined map`);
+  }
+
+  onNotifyEdit(boolean:boolean) {
+    this.aggiungiCommesseToggle = !this.aggiungiCommesseToggle;
+  }
+  onApriDiv(){
+    this.aggiungiCommesseToggle =!this.aggiungiCommesseToggle;
   }
 }

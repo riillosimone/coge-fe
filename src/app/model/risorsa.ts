@@ -1,4 +1,5 @@
 import { Attachment } from "./attachment";
+import { Commessa } from "./commessa";
 
 export class Risorsa {
 
@@ -11,7 +12,8 @@ export class Risorsa {
         public dataOut?:Date,
         public email?:string,
         public costoGiornaliero?:number,
-        public cv?:Attachment
+        public cv?:Attachment,
+        public commesse?: Commessa[]
     ){}
 
 }
